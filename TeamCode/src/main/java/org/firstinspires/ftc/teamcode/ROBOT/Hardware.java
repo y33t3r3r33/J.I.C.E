@@ -17,6 +17,22 @@ public class Hardware {
     public Servo Claw;
     public Servo Intake;
 
+
+    public Hardware(Hardware hmap){
+    }
+
+
+    public Hardware(){
+
+    }
+    public Hardware getInstance(){
+        if(instance == null) {
+
+            instance = new Hardware();
+        }
+        return instance;
+    }
+
     public void init(HardwareMap hmap){
         this.hmap = hmap;
 
