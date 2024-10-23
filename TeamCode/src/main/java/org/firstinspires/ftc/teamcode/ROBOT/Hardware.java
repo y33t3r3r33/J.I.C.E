@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.ROBOT;
 
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -15,7 +16,7 @@ public class Hardware {
     public DcMotor Arm;
 
     public Servo Claw;
-    public Servo Intake;
+    public CRServo Intake;
 
 
     public Hardware(Hardware hmap){
@@ -41,7 +42,7 @@ public class Hardware {
         Forearm = hmap.get(DcMotor.class,"forearm");
         Arm = hmap.get(DcMotor.class,"arm");
         Claw = hmap.get(Servo.class,"claw");
-        Intake = hmap.get(Servo.class,"intake");
+        Intake = hmap.get(CRServo.class,"intake");
     }
 
     public void loop() {
