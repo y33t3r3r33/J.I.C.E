@@ -1,18 +1,24 @@
 package org.firstinspires.ftc.teamcode.ROBOT.TEST;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.teamcode.ROBOT.Hardware;
 
 @TeleOp(name = "MotorTest", group = "Test")
-public class MotorTest extends LinearOpMode {
+public class MotorTest extends OpMode {
+
+    public DcMotor test;
 
     @Override
-    public void runOpMode(){
+    public void init() {
+        test = hardwareMap.get(DcMotor.class, "test");
+    }
 
-        double testPower;
-        double testMove = (gamepad1.left_stick_y);
-
+    @Override
+    public void loop() {
+        test.setPower(gamepad1.left_stick_y);
     }
 }

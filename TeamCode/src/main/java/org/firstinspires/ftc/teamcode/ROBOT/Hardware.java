@@ -18,8 +18,6 @@ public class Hardware {
     public Servo Claw;
     public CRServo Intake;
 
-    public DcMotor test; //For testing usage only
-
 
     public Hardware(Hardware hmap){
     }
@@ -45,7 +43,6 @@ public class Hardware {
         Arm = hmap.get(DcMotor.class,"arm");
         Claw = hmap.get(Servo.class,"claw");
         Intake = hmap.get(CRServo.class,"intake");
-        test = hmap.get(DcMotor.class,"test");
     }
 
     public void loop() {
