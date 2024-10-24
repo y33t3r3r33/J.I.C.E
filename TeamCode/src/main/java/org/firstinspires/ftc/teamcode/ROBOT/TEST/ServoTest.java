@@ -1,9 +1,11 @@
 package org.firstinspires.ftc.teamcode.ROBOT.TEST;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.Servo;
 
+@TeleOp(name = "servoTest")
 public class ServoTest extends OpMode {
 
     public Servo testR; //First servo port
