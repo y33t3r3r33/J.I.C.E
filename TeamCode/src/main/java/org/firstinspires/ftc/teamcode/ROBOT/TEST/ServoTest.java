@@ -17,6 +17,18 @@ public class ServoTest extends OpMode {
 
     @Override
     public void loop() {
+        if (gamepad1.a) {
+            testR.setPosition(0.5);
+        } else if (gamepad1.b) {
+            testR.setPosition(0.0);
+        }
 
+        if (gamepad1.right_bumper) {
+            testCR.setPower(1.0);
+        } else if (gamepad1.left_bumper) {
+            testCR.setPower(-1.0);
+        } else {
+            testCR.setPower(0.0);
+        }
     }
 }
