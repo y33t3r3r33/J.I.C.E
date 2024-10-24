@@ -10,7 +10,7 @@ import org.firstinspires.ftc.teamcode.ROBOT.Hardware;
 @TeleOp(name = "MotorTest", group = "Test")
 public class MotorTest extends OpMode {
 
-    public DcMotor test;
+    public DcMotor test;//First motor port
 
     @Override
     public void init() {

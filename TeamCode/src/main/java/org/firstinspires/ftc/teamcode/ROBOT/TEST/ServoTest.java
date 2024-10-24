@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 public class ServoTest extends OpMode {
 
-    public Servo testR;
-    public CRServo testCR;
+    public Servo testR; //First servo port
+    public CRServo testCR;//Second servo port
 
     @Override
     public void init() {
