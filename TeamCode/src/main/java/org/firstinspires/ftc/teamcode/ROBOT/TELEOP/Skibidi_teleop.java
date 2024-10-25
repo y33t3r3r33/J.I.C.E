@@ -29,6 +29,9 @@ public class Skibidi_teleop extends OpMode {
                 gamepad1.left_stick_y * 0.8,
                 -gamepad1.right_stick_x * 0.8);
 
-        //arm.setPower(gamepad2.left_stick_y);
+
+        double power = gamepad2.left_stick_y;
+
+        //this.Arm.setPower(power);
     }
 }
