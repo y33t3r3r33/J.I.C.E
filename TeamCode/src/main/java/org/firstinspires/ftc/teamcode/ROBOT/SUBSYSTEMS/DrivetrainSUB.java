@@ -22,6 +22,5 @@ public class DrivetrainSUB extends SubsystemBase {
     public MecanumDrive drive = new MecanumDrive(this.FLMotor, this.FRMotor, this.BLMotor, this.BRMotor);
 
     public void SigmaDrive(double x, double y, double z){
-        drive.driveRobotCentric(x,y,z);
     }
 }
