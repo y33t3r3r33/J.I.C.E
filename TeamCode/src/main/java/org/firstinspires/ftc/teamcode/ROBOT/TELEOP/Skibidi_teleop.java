@@ -14,7 +14,7 @@ public class Skibidi_teleop extends OpMode {
     //private PIDController PIDController = new PIDController(0.1);
     private Hardware robot = Hardware.instance;
 
-    public MecanumDrive drivesigma;
+    //public MecanumDrive drivesigma;
 
     @Override
     public void init() {
@@ -24,14 +24,12 @@ public class Skibidi_teleop extends OpMode {
 
     @Override
     public void loop() {
-        this.drivesigma.driveRobotCentric(
+        this.robot.drivetrain.SigmaDrive(
                 -gamepad1.left_stick_x * 0.8,
                 gamepad1.left_stick_y * 0.8,
                 -gamepad1.right_stick_x * 0.8);
 
 
         double power = gamepad2.left_stick_y;
-
-        //this.Arm.setPower(power);
     }
 }

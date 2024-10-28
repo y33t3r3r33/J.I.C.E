@@ -6,28 +6,14 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.DrivetrainSUB;
+
 public class Hardware {
 
     public static Hardware instance = null;
     private HardwareMap hmap;
+    public DrivetrainSUB drivetrain;
 
-    public MotorEx FRMotor;
-    public MotorEx FLMotor;
-    public MotorEx BRMotor;
-    public MotorEx BLMotor;
-
-    public MotorEx Extend;
-
-    public CRServo Intake;
-
-
-    public Hardware(Hardware hmap){
-    }
-
-
-    public Hardware(){
-
-    }
     public Hardware getInstance(){
         if(instance == null) {
 
@@ -38,16 +24,7 @@ public class Hardware {
 
     public void init(HardwareMap hmap){
         this.hmap = hmap;
-
-        FRMotor = hmap.get(MotorEx.class, "FRMotor");
-        FLMotor = hmap.get(MotorEx.class, "FLMotor");
-        BRMotor = hmap.get(MotorEx.class, "BRMotor");
-        BLMotor = hmap.get(MotorEx.class, "BLMotor");
-
-        Extend = hmap.get(MotorEx.class, "Extend");
-
-        Intake = hmap.get(CRServo.class, "Intake");
-
+        this.drivetrain = new DrivetrainSUB(hmap);
     }
 
 

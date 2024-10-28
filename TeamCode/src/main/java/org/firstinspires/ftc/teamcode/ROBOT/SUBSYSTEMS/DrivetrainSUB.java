@@ -12,6 +12,8 @@ public class DrivetrainSUB extends SubsystemBase {
     public MotorEx BRMotor;
     public MotorEx BLMotor;
 
+    public MecanumDrive drivesigma;
+
     public DrivetrainSUB(HardwareMap hmap) {
         this.FRMotor=new MotorEx(hmap,"FRMotor");
         this.FLMotor=new MotorEx(hmap,"FLMotor");
@@ -22,5 +24,6 @@ public class DrivetrainSUB extends SubsystemBase {
     public MecanumDrive drive = new MecanumDrive(this.FLMotor, this.FRMotor, this.BLMotor, this.BRMotor);
 
     public void SigmaDrive(double x, double y, double z){
+        drive.driveRobotCentric(x, y, z);
     }
 }
