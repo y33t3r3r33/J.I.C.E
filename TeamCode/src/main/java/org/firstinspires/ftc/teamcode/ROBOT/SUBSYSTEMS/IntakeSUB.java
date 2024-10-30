@@ -12,4 +12,8 @@ public class IntakeSUB extends SubsystemBase {
         Intake = hmap.get(CRServo.class, "Intake");
 
     }
+
+    public void Intake(double power){
+        Intake.setPower(power);
+    }
 }
