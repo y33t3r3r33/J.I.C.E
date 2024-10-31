@@ -21,8 +21,7 @@ public class ArmSUB extends SubsystemBase {
     }
 
     public void SetArmEXT(double wantedPos) {
-        //double value = ArmEXT.calculate(wantedPos);
+        double value = ArmEXT.calculate(wantedPos);
     }
-
-    }
+}
 
