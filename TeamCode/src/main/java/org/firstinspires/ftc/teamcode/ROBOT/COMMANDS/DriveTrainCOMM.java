@@ -32,7 +32,7 @@ public class DriveTrainCOMM extends CommandBase {
     public void execute() {
 
 
-        this.dt.drive.driveRobotCentric(
+        this.dt.SigmaDrive.driveRobotCentric(
                 -this.xSupplier.getAsDouble() * 0.8
                 , this.ySupplier.getAsDouble() * 0.8
                 , -this.zSupplier.getAsDouble() * 0.8);

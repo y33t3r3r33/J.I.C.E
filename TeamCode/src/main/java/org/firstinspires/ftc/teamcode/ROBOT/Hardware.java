@@ -11,10 +11,10 @@ public class Hardware {
     public static Hardware instance = null;
     private HardwareMap hmap;
     public DrivetrainSUB drivetrain;
-    public IntakeSUB intake;
-    public ArmSUB arm;
+    //public IntakeSUB intake;
+   // public ArmSUB arm;
 
-    public Hardware getInstance(){
+    public static Hardware getInstance(){
         if(instance == null) {
 
             instance = new Hardware();
@@ -25,8 +25,8 @@ public class Hardware {
     public void init(HardwareMap hmap){
         this.hmap = hmap;
         this.drivetrain = new DrivetrainSUB(hmap);
-        this.intake = new IntakeSUB(hmap);
-        this.arm = new ArmSUB(hmap);
+        //this.intake = new IntakeSUB(hmap);
+        //this.arm = new ArmSUB(hmap);
     }
 
 

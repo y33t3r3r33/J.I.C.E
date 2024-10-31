@@ -10,10 +10,8 @@ public class ArmSUB extends SubsystemBase {
     public MotorEx ArmEXT;
     public MotorEx ArmANG;
 
-    public PIDController PIDEXT = new PIDController(0., 0, 0.001);
-    public PIDController PIDANG = new PIDController(0., 0, 0.001);
-
-    public double EXTPos = this.ArmEXT.getCurrentPosition();
+    public PIDController PIDEXT = new PIDController(0.001, 0, 0);
+    public PIDController PIDANG = new PIDController(0.001, 0, 0);
 
     public ArmSUB(HardwareMap hmap) {
         this.ArmEXT = new MotorEx(hmap, "ArmEXT");
@@ -21,7 +19,7 @@ public class ArmSUB extends SubsystemBase {
     }
 
     public void SetArmEXT(double wantedPos) {
-        double value = PIDEXT.calculate(wantedPos, EXTPos);
+        double value = PIDEXT.calculate(wantedPos, this.ArmEXT.getCurrentPosition());
         this.ArmEXT.set(value);
     }
 }
