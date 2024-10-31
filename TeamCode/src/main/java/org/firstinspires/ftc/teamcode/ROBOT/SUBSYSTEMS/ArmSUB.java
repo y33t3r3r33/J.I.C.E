@@ -7,15 +7,22 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class ArmSUB extends SubsystemBase {
 
-    public MotorEx Arm;
+    public MotorEx ArmEXT;
+    public MotorEx ArmANG;
 
-    public PIDController PID = new PIDController(0., 0, 0.001);
+    public PIDController PIDEXT = new PIDController(0., 0, 0.001);
+    public PIDController PIDANG = new PIDController(0., 0, 0.001);
+
+    public double EXTPos = this.ArmEXT.getCurrentPosition();
 
     public ArmSUB(HardwareMap hmap) {
-        this.Arm = new MotorEx(hmap, "Arm");
+        this.ArmEXT = new MotorEx(hmap, "ArmEXT");
+        this.ArmANG = new MotorEx(hmap, "ArmANG");
     }
 
-
+    public void SetArmEXT(double wantedPos) {
+        //double value = ArmEXT.calculate(wantedPos);
+    }
 
     }
 
