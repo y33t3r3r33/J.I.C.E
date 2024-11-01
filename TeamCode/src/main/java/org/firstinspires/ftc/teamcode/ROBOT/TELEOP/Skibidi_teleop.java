@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.ROBOT.Hardware;
 
 
-@TeleOp(name = "Skibidi_teleop")
+@TeleOp(name = "teleop")
 public class Skibidi_teleop extends OpMode {
     private static Hardware robot = Hardware.getInstance();
 

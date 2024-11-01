@@ -12,7 +12,8 @@ public class Hardware {
     private HardwareMap hmap;
     public DrivetrainSUB drivetrain;
     public IntakeSUB intake;
-    public ArmSUB arm;
+    public ArmSUB armEXT;
+    public ArmSUB armANG;
 
     public static Hardware getInstance(){
         if(instance == null) {
@@ -26,7 +27,8 @@ public class Hardware {
         this.hmap = hmap;
         this.drivetrain = new DrivetrainSUB(hmap);
         this.intake = new IntakeSUB(hmap);
-        this.arm = new ArmSUB(hmap);
+        this.armEXT = new ArmSUB(hmap);
+        this.armANG = new ArmSUB(hmap);
     }
 
 
