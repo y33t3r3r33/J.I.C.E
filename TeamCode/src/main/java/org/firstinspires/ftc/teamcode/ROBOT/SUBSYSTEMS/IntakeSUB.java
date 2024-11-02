@@ -13,7 +13,10 @@ public class IntakeSUB extends SubsystemBase {
 
     }
 
-    public void Intake(double power){
-        Intake.setPower(power);
+    public void intakeToggleOut(){
+        this.Intake.setPower(1);
+    }
+    public void intakeToggleOn() {
+        this.Intake.setPower(-1);
     }
 }

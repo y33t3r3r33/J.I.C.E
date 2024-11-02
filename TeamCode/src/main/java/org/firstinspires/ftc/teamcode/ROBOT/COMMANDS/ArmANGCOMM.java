@@ -2,17 +2,19 @@ package org.firstinspires.ftc.teamcode.ROBOT.COMMANDS;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 
-import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.ArmSUB;
+import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.ArmANGSUB;
 
 public class ArmANGCOMM extends CommandBase {
 
-    ArmSUB arm;
+    ArmANGSUB armANG;
+
+    public double pose;
 
 
-    public ArmANGCOMM(ArmSUB arm) {
-        this.arm = arm;
+    public ArmANGCOMM(ArmANGSUB armANG) {
+        this.armANG = armANG;
 
-        addRequirements(this.arm);
+        addRequirements(this.armANG);
     }
 
 
@@ -24,7 +26,7 @@ public class ArmANGCOMM extends CommandBase {
 
     @Override
     public void execute() {
-        super.execute();
+        this.armANG.GoPosition(pose);
     }
 
     @Override
@@ -34,6 +36,10 @@ public class ArmANGCOMM extends CommandBase {
 
     @Override
     public boolean isFinished() {
-        return super.isFinished();
+        return tolerance(this.armANG.Encoder(),-5,5);
     }
+    public boolean tolerance(double value,double min,double max){
+        return value >= min && value <= max;
+    }
+
 }

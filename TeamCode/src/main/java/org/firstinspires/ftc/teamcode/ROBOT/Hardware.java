@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.DrivetrainSUB;
 import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.IntakeSUB;
-import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.ArmSUB;
+import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.ArmANGSUB;
 
 public class Hardware {
 
@@ -12,8 +12,8 @@ public class Hardware {
     private HardwareMap hmap;
     public DrivetrainSUB drivetrain;
     public IntakeSUB intake;
-    public ArmSUB armEXT;
-    public ArmSUB armANG;
+    public ArmANGSUB armEXT;
+    public ArmANGSUB armANG;
 
     public static Hardware getInstance(){
         if(instance == null) {
@@ -27,8 +27,8 @@ public class Hardware {
         this.hmap = hmap;
         this.drivetrain = new DrivetrainSUB(hmap);
         this.intake = new IntakeSUB(hmap);
-        this.armEXT = new ArmSUB(hmap);
-        this.armANG = new ArmSUB(hmap);
+        this.armEXT = new ArmANGSUB(hmap);
+        this.armANG = new ArmANGSUB(hmap);
     }
 
 

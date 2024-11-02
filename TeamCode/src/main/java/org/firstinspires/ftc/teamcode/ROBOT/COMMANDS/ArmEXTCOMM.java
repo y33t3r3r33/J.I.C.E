@@ -2,19 +2,16 @@ package org.firstinspires.ftc.teamcode.ROBOT.COMMANDS;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 
-import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.ArmSUB;
-
-import java.util.function.DoubleSupplier;
+import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.ArmEXTSUB;
 
 public class ArmEXTCOMM extends CommandBase {
-    ArmSUB arm;
+    public ArmEXTSUB armEXT;
+    public double pose;
 
-    private DoubleSupplier ext;
-
-    public ArmEXTCOMM(ArmSUB arm) {
-        this.arm = arm;
-
-        addRequirements(this.arm);
+    public ArmEXTCOMM(ArmEXTSUB armExt, double pose) {
+        this.armEXT = armEXT;
+        this.pose = pose;
+        addRequirements(armEXT);
     }
 
 
@@ -25,16 +22,20 @@ public class ArmEXTCOMM extends CommandBase {
 
     @Override
     public void execute() {
-        super.execute();
+        this.armEXT.SetArmEXT(this.pose);
     }
 
     @Override
     public void end(boolean interrupted) {
+        this.armEXT.setExtensionPower(0);
         super.end(interrupted);
     }
 
     @Override
     public boolean isFinished() {
-        return super.isFinished();
+        return tolerance(this.armEXT.Encoder(), -5,5);
+    }
+    public boolean tolerance(double value,double min,double max) {
+        return value >= min && value <= max;
     }
 }
