@@ -5,8 +5,8 @@ import com.arcrobotics.ftclib.command.ParallelCommandGroup;
 import com.arcrobotics.ftclib.command.SequentialCommandGroup;
 import com.arcrobotics.ftclib.command.WaitCommand;
 
-import org.firstinspires.ftc.teamcode.ROBOT.COMMANDS.TELEOPCOMMANDS.ArmANGCOMM;
-import org.firstinspires.ftc.teamcode.ROBOT.COMMANDS.TELEOPCOMMANDS.IntakeCOMM;
+import org.firstinspires.ftc.teamcode.ROBOT.COMMANDS.BASECOMMANDS.ArmANGCOMM;
+import org.firstinspires.ftc.teamcode.ROBOT.COMMANDS.BASECOMMANDS.IntakeCOMM;
 import org.firstinspires.ftc.teamcode.ROBOT.Config;
 import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.ArmANGSUB;
 import org.firstinspires.ftc.teamcode.ROBOT.SUBSYSTEMS.IntakeSUB;

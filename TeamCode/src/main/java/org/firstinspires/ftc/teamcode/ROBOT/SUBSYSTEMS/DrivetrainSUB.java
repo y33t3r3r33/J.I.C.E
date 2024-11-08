@@ -5,6 +5,8 @@ import com.arcrobotics.ftclib.drivebase.MecanumDrive;
 import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.pedroPathing.follower.Follower;
+
 public class DrivetrainSUB extends SubsystemBase {
 
     public MotorEx FRMotor;
@@ -13,6 +15,8 @@ public class DrivetrainSUB extends SubsystemBase {
     public MotorEx BLMotor;
 
     public MecanumDrive SigmaDrive;
+
+    public Follower follower;
 
     public DrivetrainSUB(HardwareMap hmap) {
         this.FRMotor=new MotorEx(hmap,"FRMotor");
