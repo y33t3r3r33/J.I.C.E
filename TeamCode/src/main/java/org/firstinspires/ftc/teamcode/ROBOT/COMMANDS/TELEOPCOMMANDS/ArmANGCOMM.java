@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.ROBOT.COMMANDS;
+package org.firstinspires.ftc.teamcode.ROBOT.COMMANDS.TELEOPCOMMANDS;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 
@@ -11,8 +11,9 @@ public class ArmANGCOMM extends CommandBase {
     public double pose;
 
 
-    public ArmANGCOMM(ArmANGSUB armANG) {
+    public ArmANGCOMM(ArmANGSUB armANG, double pose) {
         this.armANG = armANG;
+        this.pose = pose;
 
         addRequirements(this.armANG);
     }

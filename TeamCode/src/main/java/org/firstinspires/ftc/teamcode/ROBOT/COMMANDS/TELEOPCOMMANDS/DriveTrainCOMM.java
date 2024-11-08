@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.ROBOT.COMMANDS;
+package org.firstinspires.ftc.teamcode.ROBOT.COMMANDS.TELEOPCOMMANDS;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 
