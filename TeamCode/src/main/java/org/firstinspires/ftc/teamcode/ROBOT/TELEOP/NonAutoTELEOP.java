@@ -5,8 +5,6 @@ import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
-import com.qualcomm.robotcore.hardware.Gamepad;
-import com.qualcomm.robotcore.hardware.Servo;
 
 
 @TeleOp(name = "NonAutoTeleop")
@@ -34,7 +32,7 @@ public class NonAutoTELEOP extends OpMode {
 
         this.Intake = hardwareMap.get(CRServo.class,"Intake");
 
-        this.ArmEXT = new MotorEx(hardwareMap, "ArmANG");
+        this.ArmEXT = new MotorEx(hardwareMap, "ArmEXT");
         this.ArmANG = new MotorEx(hardwareMap,"ArmANG");
 
         drive = new MecanumDrive(this.FLMotor, this.FRMotor, this.BLMotor, this.BRMotor);
@@ -47,11 +45,11 @@ public class NonAutoTELEOP extends OpMode {
             gamepad1.left_stick_y * 0.8,
             -gamepad1.right_stick_x * 0.8);
 
-    double power = gamepad2.left_stick_y;
+    double extend = gamepad2.left_stick_y;
 
     double angle = gamepad2.right_stick_y;
 
-    this.ArmEXT.set(power);
+    this.ArmEXT.set(extend);
 
     this.ArmANG.set(angle);
 

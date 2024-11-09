@@ -26,7 +26,7 @@ public class StowAuto extends SequentialCommandGroup {
     @Override
     public void initialize() {
         addCommands( new ParallelCommandGroup(new ArmANGCOMM(this.armang, Config.PivotStowSetpoint),
-                        new IntakeCOMM(this.intake, Config.PivotStowSetpoint))
+                        new IntakeCOMM(this.intake, Config.ExtensionStowSetpoint))
                 , new InstantCommand(this.intake::intakeToggleOut )
                 , new WaitCommand(300)
         );
